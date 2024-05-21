@@ -1,7 +1,7 @@
 ---
 title: "Bulb: A Reactive Programming Library for JavaScript"
 layout: ../layouts/main.astro
-date: 2018-01-12
+publishDate: 2018-01-12
 ---
 
 <img src="images/bulb.png" alt="Bulb logo" align="right" width="128px">

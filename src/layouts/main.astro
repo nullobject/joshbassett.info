@@ -10,25 +10,22 @@ const { content } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.pink.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" />
 		<title>{content.title}</title>
 	</head>
 	<body>
     <header>
-      <hgroup>
-        <h1>Joshua Bassett</h1>
-        <p>A blog</p>
-      </hgroup>
+      <h1>Joshua Bassett</h1>
     </header>
     <main>
       <hgroup>
         <h2>{content.title}</h2>
-        <p>{content.date}</p>
+        <p>{new Date(content.publishDate).toLocaleDateString()}</p>
       </hgroup>
       <slot />
     </main>
     <footer>
-      <small>Built with <a href="https://picocss.com">Pico</a> • <a href="https://github.com/picocss/examples/blob/master/v2-html-classless/index.html">Source code</a></small>
+      <small>&copy; {new Date().getFullYear()} Joshua Bassett</small>
     </footer>
 	</body>
 </html>
