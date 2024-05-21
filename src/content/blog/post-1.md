@@ -1,10 +1,10 @@
 ---
 title: "Bulb: A Reactive Programming Library for JavaScript"
-layout: ../layouts/main.astro
-publishDate: 2018-01-12
+description: "lorem ipsum"
+pubDate: 2018-01-12
 ---
 
-<img src="images/bulb.png" alt="Bulb logo" align="right" width="128px">
+![Bulb logo](./assets/bulb.png)
 
 Today I am excited to announce a reactive programming library I wrote for
 JavaScript, called [Bulb](https://github.com/nullobject/bulb).
@@ -37,7 +37,7 @@ allow changes to be modelled as they travel through circuits. Much like in
 electrical circuits, signals are an ordered time-varying source of values.
 Signals can be created, merged, and changed using *combinator* functions.
 
-<p align="center"><img src="images/signal.png" alt="Signal diagram"></p>
+![Signal diagram](./assets/signal.png)
 
 There are three different kinds of values that can be emitted by a signal: data
 (of any type), an error, or a 'complete' event. The diagram above shows the

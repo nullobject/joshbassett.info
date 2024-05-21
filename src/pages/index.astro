@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/main.astro';
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+---
+
+<BaseLayout content={{lang: "en"}}>
+  <h2>Recent posts</h2>
+  <ul>
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

@@ -15,13 +15,9 @@ const { content } = Astro.props;
 	</head>
 	<body>
     <header>
-      <h1>Joshua Bassett</h1>
+      <h1><a href="/">Joshua Bassett</a></h1>
     </header>
     <main>
-      <h2>{content.title}</h2>
-      <p class="meta">
-        <span>{new Date(content.publishDate).toLocaleDateString()}</span>
-      </p>
       <slot />
     </main>
     <footer>
