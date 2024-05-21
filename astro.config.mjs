@@ -6,11 +6,10 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: {
-      theme: 'rose-pine-dawn',
-      // themes: {
-      //   light: 'rose-pine-dawn',
-      //   dark: 'rose-pine-moon',
-      // },
+      themes: {
+        light: 'rose-pine-dawn',
+        dark: 'rose-pine-moon',
+      },
       // Learn more about this configuration here:
       // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
     },

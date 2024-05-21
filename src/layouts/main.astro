@@ -4,7 +4,7 @@ import '../styles/global.css';
 const { content } = Astro.props;
 ---
 
-<html lang={content.lang || 'en'} data-theme="light">
+<html lang={content.lang || 'en'}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,10 +18,10 @@ const { content } = Astro.props;
       <h1>Joshua Bassett</h1>
     </header>
     <main>
-      <hgroup>
-        <h2>{content.title}</h2>
-        <p>{new Date(content.publishDate).toLocaleDateString()}</p>
-      </hgroup>
+      <h2>{content.title}</h2>
+      <p class="meta">
+        <span>{new Date(content.publishDate).toLocaleDateString()}</span>
+      </p>
       <slot />
     </main>
     <footer>
