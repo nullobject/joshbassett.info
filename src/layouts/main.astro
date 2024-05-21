@@ -4,14 +4,31 @@ import '../styles/global.css';
 const { content } = Astro.props;
 ---
 
-<html lang={content.lang || 'en'}>
+<html lang={content.lang || 'en'} data-theme="light">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.pink.min.css" />
 		<title>{content.title}</title>
 	</head>
 	<body>
-		<slot />
+    <header>
+      <hgroup>
+        <h1>Joshua Bassett</h1>
+        <p>A blog</p>
+      </hgroup>
+    </header>
+    <main>
+      <hgroup>
+        <h2>{content.title}</h2>
+        <p>{content.date}</p>
+      </hgroup>
+      <slot />
+    </main>
+    <footer>
+      <small>Built with <a href="https://picocss.com">Pico</a> • <a href="https://github.com/picocss/examples/blob/master/v2-html-classless/index.html">Source code</a></small>
+    </footer>
 	</body>
 </html>
