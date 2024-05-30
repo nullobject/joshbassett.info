@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/main.astro';
 import { getCollection } from 'astro:content';
-const posts = await getCollection('blog');
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
 ---
 
 <BaseLayout content={{lang: "en"}}>

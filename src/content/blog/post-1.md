@@ -1,10 +1,8 @@
 ---
 title: "Bulb: A Reactive Programming Library for JavaScript"
 description: "lorem ipsum"
-pubDate: 2018-01-12
+publishedAt: 2018-01-12
 ---
-
-![Bulb logo](./assets/bulb.png)
 
 Today I am excited to announce a reactive programming library I wrote for
 JavaScript, called [Bulb](https://github.com/nullobject/bulb).
@@ -18,6 +16,8 @@ APIs.
 Bulb focuses on delivering a very simple API (around 4 KB) that provides only
 the key building blocks required for reactive programming in the JavaScript
 language.
+
+![Bulb logo](../../assets/bulb.png)
 
 ## What is Reactive Programming?
 
@@ -37,7 +37,7 @@ allow changes to be modelled as they travel through circuits. Much like in
 electrical circuits, signals are an ordered time-varying source of values.
 Signals can be created, merged, and changed using *combinator* functions.
 
-![Signal diagram](./assets/signal.png)
+![Signal diagram](../../assets/signal.png)
 
 There are three different kinds of values that can be emitted by a signal: data
 (of any type), an error, or a 'complete' event. The diagram above shows the
