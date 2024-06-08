@@ -14,19 +14,20 @@ export async function getStaticPaths() {
 
 const post = Astro.props;
 const { Content } = await post.render();
-const options = {
+const pub = post.data.publishedAt.toLocaleDateString(undefined, {
   weekday: "long",
   year: "numeric",
   month: "long",
   day: "numeric",
-};
-const pub = post.data.publishedAt.toLocaleDateString(undefined, options);
+});
 ---
 
 <Layout title={`${post.data.title} | Joshua Bassett`}>
-  <h2>{post.data.title}</h2>
-  <p class="meta">
-    Published on <span>{pub}</span>
-  </p>
-  <Content />
+  <hgroup>
+    <h1>{post.data.title}</h1>
+    <p>{pub}</p>
+  </hgroup>
+  <div class="blog">
+    <Content />
+  </div>
 </Layout>
