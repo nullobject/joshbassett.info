@@ -1,32 +1,32 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/main.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/main.astro";
 
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
 
 const post = Astro.props;
 const { Content } = await post.render();
 const options = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 };
+const pub = post.data.publishedAt.toLocaleDateString(undefined, options);
 ---
 
-<BaseLayout content={{lang: "en"}}>
+<Layout title={`${post.data.title} | Joshua Bassett`}>
   <h2>{post.data.title}</h2>
   <p class="meta">
-    Published on <span>{post.data.publishedAt.toLocaleDateString(undefined, options)}</span>
+    Published on <span>{pub}</span>
   </p>
   <Content />
-</BaseLayout>
-
+</Layout>

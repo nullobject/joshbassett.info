@@ -1,18 +1,20 @@
 ---
-import BaseLayout from '../layouts/main.astro';
-import { getCollection } from 'astro:content';
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+import Layout from "../layouts/main.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
 );
 ---
 
-<BaseLayout content={{lang: "en"}}>
+<Layout title="Joshua Bassett">
   <h2>Recent posts</h2>
   <ul>
-    {posts.map((post) => (
-      <li>
-        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-      </li>
-    ))}
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
   </ul>
-</BaseLayout>
+</Layout>

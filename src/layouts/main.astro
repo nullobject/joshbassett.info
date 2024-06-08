@@ -1,19 +1,29 @@
 ---
-import '../styles/global.css';
+interface Props {
+  title: string;
+}
 
-const { content } = Astro.props;
+import "../styles/global.css";
+
+const { title } = Astro.props;
 ---
 
-<html lang={content.lang || 'en'}>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Joshua Bassett's blog" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" />
-		<title>{content.title}</title>
-	</head>
-	<body>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="container">
     <header>
       <h1><a href="/">Joshua Bassett</a></h1>
     </header>
@@ -23,5 +33,5 @@ const { content } = Astro.props;
     <footer>
       <small>&copy; {new Date().getFullYear()} Joshua Bassett</small>
     </footer>
-	</body>
+  </body>
 </html>
