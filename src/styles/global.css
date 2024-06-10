@@ -5,6 +5,11 @@
   --pico-font-family-monospace: "Inconsolata", monospace, var(--pico-font-family-emoji);
 }
 
+.icon-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
