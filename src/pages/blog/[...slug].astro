@@ -23,23 +23,33 @@ const date = post.data.date.toLocaleDateString(undefined, {
 ---
 
 <Layout title={`${post.data.title} | Joshua Bassett`}>
-  <hgroup>
-    <h1>{post.data.title}</h1>
-    <p>{date}</p>
-  </hgroup>
   <article>
+    <hgroup>
+      <h1>{post.data.title}</h1>
+      <p>{date}</p>
+    </hgroup>
     <Content />
   </article>
 </Layout>
 
 <style>
   article {
-    background: none;
-    box-shadow: none;
+    background: unset;
     border-radius: unset;
+    box-shadow: unset;
+    padding: unset;
   }
 
-  article :global(p):has(> img) {
-    text-align: center;
+  article :global(:is(h1, h2, h3, h4, h5, h6)) {
+    text-wrap: balance;
+  }
+
+  article :global(p) {
+    text-align: justify;
+  }
+
+  article :global(p > img) {
+    display: block;
+    margin: var(--pico-block-spacing-vertical) auto;
   }
 </style>
