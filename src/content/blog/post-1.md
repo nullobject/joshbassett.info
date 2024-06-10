@@ -1,7 +1,7 @@
 ---
 title: 'Bulb: A Reactive Programming Library for JavaScript'
-description: lorem ipsum
-publishedAt: 2018-01-12T00:00:00.000Z
+author: Joshua Bassett
+date: 2018-01-12T00:00:00.000Z
 ---
 Today I am excited to announce a reactive programming library I wrote for
 JavaScript, called [Bulb](https://github.com/nullobject/bulb).

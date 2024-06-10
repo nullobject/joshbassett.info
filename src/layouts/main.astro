@@ -31,7 +31,7 @@ const { title } = Astro.props;
       <slot />
     </main>
     <footer>
-      <small>&copy; {new Date().getFullYear()} Joshua Bassett</small>
+      &copy; {new Date().getFullYear()} Joshua Bassett
     </footer>
   </body>
 </html>
@@ -40,7 +40,7 @@ const { title } = Astro.props;
   footer {
     color: var(--pico-muted-color);
     border-top: 1px solid var(--pico-muted-border-color);
-    padding-top: calc(var(--pico-spacing) * 2);
+    font-size: 0.875rem;
     text-align: center;
   }
 </style>

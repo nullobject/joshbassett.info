@@ -1,7 +1,7 @@
 ---
 title: How to Write an Arcade Emulator — Part 1
-description: Lorem ipsum
-publishedAt: 2019-07-12T00:00:00.000Z
+author: Joshua Bassett
+date: 2019-07-12T00:00:00.000Z
 ---
 ## Introduction
 
