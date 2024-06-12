@@ -16,7 +16,7 @@ Bulb focuses on delivering a very simple API (around 4 KB) that provides only
 the key building blocks required for reactive programming in the JavaScript
 language.
 
-![Bulb logo](images/bulb.png)
+![Bulb logo](bulb.png)
 
 ## What is Reactive Programming?
 
@@ -36,7 +36,7 @@ allow changes to be modelled as they travel through circuits. Much like in
 electrical circuits, signals are an ordered time-varying source of values.
 Signals can be created, merged, and changed using _combinator_ functions.
 
-![Signal diagram](images/signal.png)
+![Signal diagram](signal.png)
 
 There are three different kinds of values that can be emitted by a signal: data
 (of any type), an error, or a 'complete' event. The diagram above shows the

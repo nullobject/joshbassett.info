@@ -27,11 +27,11 @@ When we have a look at the raw computing power (e.g. CPU speed, memory, etc.) of
 
 How could such similar components (CPU, RAM, ROM, etc.) give rise to vastly different gaming experiences on the various platforms available at the time?
 
-![Arcade](images/rygar-arcade.jpg)
-![Commodore 64](images/rygar-c64.jpg)
-![Nintendo Entertainment System (NES)](images/rygar-nes.jpg)
-![Sega Master System (SMS)](images/rygar-sms.jpg)
-![Atari Lynx](images/rygar-lynx.jpg)
+![Arcade](rygar-arcade.jpg)
+![Commodore 64](rygar-c64.jpg)
+![Nintendo Entertainment System (NES)](rygar-nes.jpg)
+![Sega Master System (SMS)](rygar-sms.jpg)
+![Atari Lynx](rygar-lynx.jpg)
 
 The answer obviously lies in how those components were connected together, and what optimisations and trade-offs the engineers could make at the time. But to gain a deeper understanding, we have to dig further into the actual hardware.
 
@@ -45,7 +45,7 @@ The engineers couldn't design a general-purpose computer that could run a single
 
 Before we jump in and start writing an emulator, we need to gather as much information as we can about the game's original hardware design. The most important piece of information we can use is a _schematic diagram_ of the original arcade hardware. I say _original_ because bootleg versions of some popular games were developed illegally, and may contain slightly different hardware to the original.
 
-![Rygar Arcade Hardware](images/pcb.jpg)
+![Rygar Arcade Hardware](pcb.jpg)
 
 A schematic diagram – or _schematic_ – is a technical drawing that depicts how all the different components of the arcade hardware are connected together. It’s typically a multi-page document, with each page representing a different subsystem. The main subsystems of an arcade machine are:
 
@@ -56,7 +56,7 @@ A schematic diagram – or _schematic_ – is a technical drawing that depicts h
 - Sound (SFX and music)
 - Input (joysticks, buttons, coin slots, dip switches, etc.)
 
-![Rygar CPU Schematic](images/rygar-schematic.jpg)
+![Rygar CPU Schematic](rygar-schematic.jpg)
 
 To build an emulator, a general level of understanding of these subsystems is important, but thankfully we don't need to go all the way down to the individual component level of understanding for each subsystem.
 
@@ -70,5 +70,5 @@ You can [run the emulator in your browser](https://rygar.joshbassett.info), or [
 
 _In part two, we’ll take a closer look at how the CPU subsystem works and build it into our emulator._
 
-![Rygar Emulator](images/rygar-emu.png)
+![Rygar Emulator](rygar-emu.png)
 
