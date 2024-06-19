@@ -1,6 +1,5 @@
 ---
 title: 'Bulb: A Reactive Programming Library for JavaScript'
-author: Joshua Bassett
 date: 2018-01-12T00:00:00.000Z
 ---
 Today I am excited to announce a reactive programming library I wrote for
