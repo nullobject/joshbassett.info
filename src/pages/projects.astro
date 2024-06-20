@@ -1,66 +1,58 @@
 ---
 import GitHub from "../components/icons/GitHub";
 import Layout from "../layouts/Layout.astro";
+
+const projects = [
+  {
+    name: "Rygar",
+    description:
+      "This project emulates the original Rygar (1986) arcade hardware using a virtual machine, which represents the behavior of the original game exactly.",
+    url: "http://rygar.joshbassett.info",
+    repo: "nullobject/rygar-emu",
+  },
+  {
+    name: "Risk",
+    description:
+      "The game of Risk is played on a map divided up into countries. You control the blue player, the other players are all controlled by the computer. The players all take turns advancing their armies and attacking other countries. The object of the game is to defeat all the other players on the map.",
+    url: "http://risk.joshbassett.info",
+    repo: "nullobject/risk",
+  },
+  {
+    name: "Tetris",
+    description:
+      "The goal of Tetris is to score as many points as possible by clearing horizontal lines of blocks. The player must rotate, move, and drop the falling tetriminos inside the playfield. Lines are cleared when they are filled with blocks and have no empty spaces.",
+    url: "http://tetris.joshbassett.info",
+    repo: "nullobject/tetris",
+  },
+  {
+    name: "Memory",
+    description:
+      "The goal of Memory is to match all the pairs of cards in the fewest moves possible. The game is over when all the pairs have been matched.",
+    url: "http://memory.joshbassett.info",
+    repo: "nullobject/memory",
+  },
+];
 ---
 
 <Layout title="Projects | Joshua Bassett">
   <h1>Projects</h1>
   <ul>
-    <li>
-      <a
-        href="http://rygar.joshbassett.info"
-        target="_blank"
-        rel="noopener noreferrer">Rygar</a
-      >
-      <a
-        href="https://github.com/nullobject/rygar-emu"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <GitHub class="icon-sm" />
-      </a>
-    </li>
-    <li>
-      <a
-        href="http://risk.joshbassett.info"
-        target="_blank"
-        rel="noopener noreferrer">Risk</a
-      >
-      <a
-        href="https://github.com/nullobject/risk"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <GitHub class="icon-sm" />
-      </a>
-    </li>
-    <li>
-      <a
-        href="http://tetris.joshbassett.info"
-        target="_blank"
-        rel="noopener noreferrer">Tetris</a
-      >
-      <a
-        href="https://github.com/nullobject/tetris"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <GitHub class="icon-sm" />
-      </a>
-    </li>
-    <li>
-      <a
-        href="http://memory.joshbassett.info"
-        target="_blank"
-        rel="noopener noreferrer">Memory</a
-      >
-      <a
-        href="https://github.com/nullobject/memory"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <GitHub class="icon-sm" />
-      </a>
-    </li>
+    {
+      projects.map((project) => (
+        <li>
+          <a href={project.url} target="_blank" rel="noopener noreferrer">
+            {project.name}
+          </a>
+          <a
+            href={`https://github.com/${project.repo}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHub class="icon-sm" />
+          </a>
+          <p>{project.description}</p>
+        </li>
+      ))
+    }
   </ul>
 </Layout>
