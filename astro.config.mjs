@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 
+import preact from "@astrojs/preact";
+
 // https://astro.build/config
 export default defineConfig({
   // Enable Custom Markdown options, plugins, etc.
@@ -8,10 +10,11 @@ export default defineConfig({
     shikiConfig: {
       themes: {
         light: 'rose-pine-dawn',
-        dark: 'rose-pine-moon',
-      },
+        dark: 'rose-pine-moon'
+      }
       // Learn more about this configuration here:
       // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
-    },
+    }
   },
+  integrations: [preact()]
 });
