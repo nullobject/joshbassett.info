@@ -4,18 +4,22 @@
   --pico-font-family-sans-serif: "Montserrat", sans-serif, var(--pico-font-family-emoji);
   --pico-font-family-monospace: "Inconsolata", monospace, var(--pico-font-family-emoji);
   --pico-card-component-outline-width: .0625rem;
-  --pico-card-component-outline-color: #1c212c;
+  --pico-card-component-outline-color: transparent;
 }
 
-.icon-sm {
-  width: 1rem;
-  height: 1rem;
-}
+@media only screen and (prefers-color-scheme: dark) {
+  :root {
+    --pico-card-component-outline-color: #1c212c;
+  }
 
-@media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
     color: var(--shiki-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
   }
+}
+
+.icon-sm {
+  width: 1rem;
+  height: 1rem;
 }
