@@ -1,4 +1,5 @@
 ---
+import Eye from "../components/icons/Eye";
 import GitHub from "../components/icons/GitHub";
 import Layout from "../layouts/Layout.astro";
 
@@ -13,7 +14,7 @@ const projects = [
   {
     name: "Risk",
     description:
-      "The game of Risk is played on a map divided up into countries. You control the blue player, the other players are all controlled by the computer. The players all take turns advancing their armies and attacking other countries. The object of the game is to defeat all the other players on the map.",
+      "The game of Risk is played on a map divided up into countries. The players all take turns advancing their armies and attacking other countries. The object of the game is to defeat all the other players on the map.",
     url: "http://risk.joshbassett.info",
     repo: "nullobject/risk",
   },
@@ -35,24 +36,78 @@ const projects = [
 ---
 
 <Layout title="Projects | Joshua Bassett">
-  <h1>Projects</h1>
-  <ul>
+  <hgroup>
+    <h1>Projects</h1>
+    <p>Stuff I made.</p>
+  </hgroup>
+  <section class="projects">
     {
       projects.map((project) => (
-        <li>
-          <a href={project.url} target="_blank" rel="noopener noreferrer">
-            {project.name}
-          </a>
-          <a
-            href={`https://github.com/${project.repo}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHub class="icon-sm" />
-          </a>
+        <article>
+          <h2>{project.name}</h2>
           <p>{project.description}</p>
-        </li>
+          <p class="links">
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="secondary"
+            >
+              <Eye class="icon-sm" /> Play
+            </a>
+            <a
+              href={`https://github.com/${project.repo}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="secondary"
+            >
+              <GitHub class="icon-sm" /> View source
+            </a>
+          </p>
+        </article>
       ))
     }
-  </ul>
+  </section>
 </Layout>
+
+<style>
+  .projects {
+    display: grid;
+    gap: calc(var(--pico-spacing) * 2);
+  }
+
+  @media (min-width: 1024px) {
+    .projects {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  article {
+    --pico-block-spacing-vertical: calc(var(--pico-spacing) * 1.75);
+    --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 1.75);
+    margin: 0;
+    outline-color: var(--pico-card-component-outline-color);
+    outline-style: solid;
+    outline-width: var(--pico-card-component-outline-width);
+  }
+
+  article h2 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    text-wrap: balance;
+    margin-bottom: calc(var(--pico-spacing) / 4);
+  }
+
+  article p {
+    color: var(--pico-muted-color);
+    text-wrap: pretty;
+  }
+
+  .links {
+    margin-bottom: 0;
+  }
+
+  .links a {
+    display: block;
+  }
+</style>
