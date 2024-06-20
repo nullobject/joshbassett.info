@@ -8,7 +8,10 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Layout title="Blog | Joshua Bassett">
-  <h1>Blog</h1>
+  <hgroup>
+    <h1>Blog</h1>
+    <p>Stuff I have written about.</p>
+  </hgroup>
   <ul>
     {
       posts.map((post) => (
