@@ -56,17 +56,17 @@ import X from "./icons/X.jsx";
     border-radius: 100%;
   }
 
+  @media (max-width: 575px) {
+    .avatar strong {
+      display: none;
+    }
+  }
+
   .icons:before {
     display: block;
     height: 1.125rem;
     margin-inline: var(--pico-nav-element-spacing-horizontal);
     border-left: var(--pico-border-width) solid var(--pico-muted-border-color);
     content: "";
-  }
-
-  @media (max-width: 575px) {
-    .avatar strong {
-      display: none;
-    }
   }
 </style>
