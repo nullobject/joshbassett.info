@@ -3,11 +3,13 @@
 :root {
   --pico-font-family-sans-serif: "Montserrat", sans-serif, var(--pico-font-family-emoji);
   --pico-font-family-monospace: "Inconsolata", monospace, var(--pico-font-family-emoji);
+  --pico-card-component-outline-width: .0625rem;
+  --pico-card-component-outline-color: #1c212c;
 }
 
 .icon-sm {
-  width: 24px;
-  height: 24px;
+  width: 1rem;
+  height: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
