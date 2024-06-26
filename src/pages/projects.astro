@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import Eye from "../components/icons/Eye";
 import GitHub from "../components/icons/GitHub";
 import Layout from "../layouts/Layout.astro";
+import bulb from "../assets/bulb.png";
+import fkit from "../assets/fkit.png";
 import memory from "../assets/memory.png";
 import risk from "../assets/risk.png";
 import rygar from "../assets/rygar.jpg";
@@ -41,6 +43,18 @@ const projects = [
     url: "http://memory.joshbassett.info",
     repo: "nullobject/memory",
   },
+  {
+    name: "Fkit",
+    description: "A functional programming tookit for JavaScript.",
+    logo: fkit,
+    repo: "nullobject/fkit",
+  },
+  {
+    name: "Bulb",
+    description: "A reactive programming library for JavaScript.",
+    logo: bulb,
+    repo: "nullobject/bulb",
+  },
 ];
 ---
 
@@ -61,10 +75,12 @@ const projects = [
             </hgroup>
           </section>
           <section class="links">
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              <Eye class="icon-sm" />
-              Play
-            </a>
+            {project.url && (
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                <Eye class="icon-sm" />
+                Play
+              </a>
+            )}
             <a
               href={`https://github.com/${project.repo}`}
               target="_blank"
