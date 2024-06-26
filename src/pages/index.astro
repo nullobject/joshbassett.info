@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import Posts from "../components/Posts.astro";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -13,23 +14,5 @@ const posts = (await getCollection("blog"))
     experience, primarily in the financial technology and media sectors.
   </blockquote>
   <h2>Recent posts</h2>
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <Posts posts={posts} />
 </Layout>
-
-<style>
-  ul {
-    padding: 0;
-  }
-
-  ul li {
-    list-style: none;
-  }
-</style>
