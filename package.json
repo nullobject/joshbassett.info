@@ -13,8 +13,7 @@
     "@astrojs/netlify": "^6.3.1",
     "@astrojs/preact": "^4.0.10",
     "astro": "^5.7.5",
-    "preact": "^10.22.0",
-    "typescript": "^5.4.5"
+    "preact": "^10.22.0"
   },
   "devDependencies": {
     "prettier": "^3.3.0",
