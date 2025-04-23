@@ -4,16 +4,15 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/netlify": "^6.1.0",
-    "@astrojs/preact": "^4.0.3",
-    "astro": "^5.1.10",
+    "@astrojs/netlify": "^6.3.1",
+    "@astrojs/preact": "^4.0.10",
+    "astro": "^5.7.5",
     "preact": "^10.22.0",
     "typescript": "^5.4.5"
   },
